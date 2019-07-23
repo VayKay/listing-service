@@ -9,6 +9,7 @@ const expressStaticGzip =require("express-static-gzip");
 
 app.use(bodyParser.json());
 // app.use('/:listingID',express.static("public"));
+
 app.use('/:listingID', expressStaticGzip('public', {
     enableBrotli: true,
     orderPreference: ['br', 'gz'],
@@ -19,11 +20,12 @@ app.use('/:listingID', expressStaticGzip('public', {
 
 app.get('/listing/desc/:listingID',(req,res)=>{
     var id = req.params.listingID
+    // console.log(`id "${id}" is a... ${typeof id}`);
     db.findDesc(id,(err,data)=>{
         if(err){
             res.status(500).send(err);
         } else {
-            console.log(data)
+            // console.log(data)
             if (data.length) {
                 res.json(data[0])
             } else {

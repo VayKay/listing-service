@@ -174,22 +174,47 @@ var generateamen = (num) =>{
     return obj;
 }
 
-for(var i=1;i<=100;i++){   
-    db.Desc.create(generatedesc(i),(err,res)=>{
-        if(err){
-            console.log(err)
-        }  else {
-            db.mongoose.connection.close();
+new Promise((resolve, reject) => {
+    db.Desc.deleteMany({}, (err) => {
+        if (err) {
+            console.log(`ERR: could not wipe Desc, `, err)
+            reject(err)
+        } else {
+            console.log(`wiped Desc true`)
+            resolve();
         }
     });
-    db.Amenity.create(generateamen(i),(err,res)=>{
-        if(err){
-            console.log(err)
-        }  else {
-            db.mongoose.connection.close();
+}).then(new Promise((resolve, reject) => {
+    db.Amenity.deleteMany({}, (err) => {
+        if (err) {
+            console.log(`ERR: could not wipe Amenity, `, err)
+            reject(err);
+        } else {
+            console.log(`wiped Desc true`)
+            resolve()
         }
-    });
-}
+    })
+})).then(() => {
+    for(var i=1;i<=100;i++){   
+        db.Desc.create(generatedesc(i),(err,res)=>{
+            if(err){
+                console.log(err)
+            }  else {
+                db.mongoose.connection.close();
+            }
+        });
+        db.Amenity.create(generateamen(i),(err,res)=>{
+            if(err){
+                console.log(err)
+            }  else {
+                db.mongoose.connection.close();
+            }
+        });
+    }
+})
+
+
+
 
 
 
