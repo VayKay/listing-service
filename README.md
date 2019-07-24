@@ -1,10 +1,16 @@
-**Title**
+**Vaykay Listing API Docs**
 ----
-  <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
+> The Vaykay Listing is a restful API intended to enable the client to interact with our vast database of vacation homes
 
-* **URL**
+> Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple).
 
-  <_The URL Structure (path only, no root url)_>
+* **Routes**
+| HTTP Method   | Endpoint                           | Description                                       |
+|:--------------|:-----------------------------------|:--------------------------------------------------|
+| GET           | /:listingID                        | Serves listing page HTML of a home                |
+| GET           | /listing/desc/:listingID           | Return description JSON data of one home          |
+| GET           | /listing/amenity/:listingID        | Return amenities JSON data of one home            |
+
 
 * **Method:**
   
