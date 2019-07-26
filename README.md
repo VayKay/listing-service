@@ -17,6 +17,11 @@
 | PUT           | /api/desc/:listingID               | Edit description of one home                      |
 | DELETE        | /api/desc/:listingID               | Delete description of one home                    |
 
-*note: desc will include amenities
+| HTTP Method   | Endpoint                           | Description                                       |
+|:--------------|:-----------------------------------|:--------------------------------------------------|
+| GET           | /api/amenity/:listingID            | Return amenities JSON data of one home          |
+| POST          | /api/amenity/                      | Create new amenities of one home                |
+| PUT           | /api/amenity/:listingID            | Edit amenities of one home                      |
+| DELETE        | /api/amenity/:listingID            | Delete amenities of one home                    |
 
 Todo: examples
