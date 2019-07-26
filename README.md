@@ -25,3 +25,4 @@
 | DELETE        | /api/amenity/:listingID            | Delete amenities of one home                    |
 
 Todo: examples
+specify request bodies
