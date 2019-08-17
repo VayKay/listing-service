@@ -1,6 +1,6 @@
 **Vaykay Listing API Docs**
 ----
-> The Vaykay Listing is a restful API that enablesinteraction with our vast database of vacation homes and their relevant descriptions
+> The Vaykay Listing is a restful API that enables interaction with our vast database of vacation homes and their relevant descriptions
 
 ## Related Projects
 
